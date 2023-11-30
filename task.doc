@@ -20,3 +20,5 @@
         - link (sử dụng cho trường hợp là custom link)
         - type (custom_link, category, product)
         - model_id (null || 1,2,3)
+
+        12
