@@ -1,0 +1,22 @@
+# Nghĩa - Laravel Project - Bán trang sức
+- Xác định các trang cần làm
+    - Homepage
+    - List - Search - Category - Filter
+    - Detail
+    - Các trang liên quan về Authentication: Login, Register, ForgetPassword, UserDashboard, .....
+    - Các trang liên quan về đặt hàng: Cart, Checkout, OrderTracking, 
+    - Một số trang phụ: FAQ, .....
+- Tạo sẵn route đến các trang ứng, nhúng giao diện vào
+- Database
+    - sliders (id, name, thumb, link)
+    - categories (nestedset, slug)
+    - products (id, name, price, thumb, slug)
+    - menus (nestedset)
+        - _lft
+        - _rgt
+        - parent
+
+        - name
+        - link (sử dụng cho trường hợp là custom link)
+        - type (custom_link, category, product)
+        - model_id (null || 1,2,3)
