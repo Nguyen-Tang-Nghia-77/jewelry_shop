@@ -29,16 +29,21 @@ return [
     */
 
     'disks' => [
-
+        'zvn_storage_image' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+        ],
+        
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            // 'root' => storage_path('app'),
+            'root' => public_path(),
         ],
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'root' => public_path('images/'),
+            'url' => env('APP_URL').'/public/images/',
             'visibility' => 'public',
         ],
 
@@ -66,8 +71,12 @@ return [
     |
     */
 
+    // 'links' => [
+    //     public_path('storage') => storage_path('app/public'),
+    // ],
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
 
 ];
+
