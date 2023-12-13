@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\UserModel as MainModel;
+use App\Models\User as MainModel;
 use App\Http\Requests\UserRequest as MainRequest;
 
 class UserController extends Controller
@@ -24,12 +24,11 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $this->params['filter']['status'] = $request->input('filter_status', 'all');
-        $this->params['search']['field']  = $request->input('search_field', ''); // all id description
+        $this->params['search']['field']  = $request->input('search_field', ''); 
         $this->params['search']['value']  = $request->input('search_value', '');
 
         $items              = $this->model->listItems($this->params, ['task'  => 'admin-list-items']);
-        $itemsStatusCount   = $this->model->countItems($this->params, ['task' => 'admin-count-items-group-by-status']); // [ ['status', 'count']]
-
+        $itemsStatusCount   = $this->model->countItems($this->params, ['task' => 'admin-count-items-group-by-status']); 
         return view($this->pathViewController .  'index', [
             'params'        => $this->params,
             'items'         => $items,
@@ -88,7 +87,7 @@ class UserController extends Controller
             return redirect()->route($this->controllerName)->with("zvn_notify", "Thay đổi level thành công!");
         }
     }
-
+    
     public function changePassword(MainRequest $request)
     {
         if ($request->method() == 'POST') {

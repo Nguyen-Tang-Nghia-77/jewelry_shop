@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\CategoryModel as MainModel;
+use App\Models\Category as MainModel;
 use App\Http\Requests\CategoryRequest as MainRequest;
 
 class CategoryController extends Controller
@@ -21,6 +21,13 @@ class CategoryController extends Controller
         view()->share('controllerName', $this->controllerName);
     }
 
+    public function updateTree(Request $request) {
+        $data = $request->data;
+        dd($data);
+        $root = MainModel::find(1);
+        MainModel::rebuildSubtree($data, $root);
+        return response()->json($data);
+    }
     public function index(Request $request)
     {
         $this->params['filter']['status'] = $request->input('filter_status', 'all');
@@ -28,7 +35,7 @@ class CategoryController extends Controller
         $this->params['search']['value']  = $request->input('search_value', '');
 
         // $items              = $this->model->listItems($this->params, ['task'  => 'admin-list-items']);
-        $items              = MainModel::withDepth()->having('depth', '>', 0)->defaultOrder()->get()->toFlatTree();
+        $items              = MainModel::withDepth()->having('depth', '>', 0)->defaultOrder()->get()->toTree();
         $itemsStatusCount   = $this->model->countItems($this->params, ['task' => 'admin-count-items-group-by-status']);
         return view($this->pathViewController .  'index', [
             'params'        => $this->params,
@@ -98,15 +105,6 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function display(Request $request)
-    {
-        $params["currentDisplay"]   = $request->display;
-        $params["id"]               = $request->id;
-        $this->model->saveItem($params, ['task' => 'change-display']);
-        return response()->json([
-            'status' => 'success'
-        ]);
-    }
 
     public function delete(Request $request)
     {

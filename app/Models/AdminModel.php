@@ -10,7 +10,6 @@ use DB;
 class AdminModel extends Model
 {
     
-    public $timestamps = false;
     
 
     protected $table            = '';

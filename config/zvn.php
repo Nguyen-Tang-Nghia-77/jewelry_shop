@@ -3,7 +3,7 @@
 return [
     'url'              => [
         'prefix_admin' => 'admin',
-        'prefix_news'  => 'news',
+        'prefix_frontend'  => '',
     ],
     'format'           => [
         'long_time'    => 'H:m:s d/m/Y',
@@ -24,23 +24,20 @@ return [
             'class' => 'form-control col-md-6 col-xs-12 ckeditor'
         ],
         'dashboard' => [
-            'articles'       => ['name' => 'Article', 'class' => 'bg-info', 'icon' => 'ion-clipboard'],
+            'products'       => ['name' => 'Product', 'class' => 'bg-info', 'icon' => 'ion-clipboard'],
             'categories'      => ['name' => 'Category', 'class'      => 'bg-primary', 'icon' => 'ion-bag'],
-            'rss'           => ['name' => 'Rss', 'class' => 'bg-success', 'icon' => 'ion-paperclip'],
             'sliders'        => ['name' => 'Slider', 'class' => 'bg-danger', 'icon' => 'ion-filing'],
             'users'          => ['name' => 'User', 'class' => 'bg-warning', 'icon' => 'ion-person'],
             'menu'          => ['name' => 'Menu', 'class' => 'bg-warning', 'icon' => 'ion-bag'],
         ],
         'sidebar' => [
-            'dashboard'       => ['name' => 'Dashboard', 'icon' => 'fa-tachometer-alt'],
-            'article'       => ['name' => 'Article',  'icon' => 'fa-thumbtack'],
-            'category'      => ['name' => 'Category',  'icon' => 'fa-user'],
-            'rss'           => ['name' => 'Rss', 'icon' => 'fa-sliders-h'],
-            'slider'        => ['name' => 'Slider', 'icon' => 'fa-sliders-h'],
+            // 'dashboard'       => ['name' => 'Dashboard', 'icon' => 'fa-tachometer-alt'],
+            // 'category'      => ['name' => 'Category',  'icon' => 'fa-user'],
+            // 'slider'        => ['name' => 'Slider', 'icon' => 'fa-sliders-h'],
             'user'          => ['name' => 'User', 'icon' => 'fa-users'],
-            'menu'          => ['name' => 'Menu', 'icon' => 'fa-bars'],
-            'file'          => ['name' => 'Hình ảnh', 'icon' => 'fa-images'],
-            'changePassword'          => ['name' => 'Change password', 'icon' => 'fa-key'],
+            // 'menu'          => ['name' => 'Menu', 'icon' => 'fa-bars'],
+            // 'file'          => ['name' => 'Hình ảnh', 'icon' => 'fa-images'],
+            // 'changePassword'          => ['name' => 'Change password', 'icon' => 'fa-key'],
         ],
         'status'       => [
             'all'      => ['name' => 'Tất cả', 'class' => 'btn-success'],
@@ -94,8 +91,7 @@ return [
             'default'   => ['all', 'id', 'fullname'],
             'slider'    => ['all', 'id', 'name', 'description', 'link'],
             'category'  => ['all', 'name'],
-            'article'   => ['all', 'name', 'content'],
-            'rss'       => ['all', 'name', 'link'],
+            'product'   => ['all', 'name', 'content'],
             'user'      => ['all', 'username', 'email', 'fullname'],
             'menu'      => ['all', 'name', 'link']
         ],
@@ -103,9 +99,8 @@ return [
             'default'   => ['edit', 'delete'],
             'slider'    => ['edit', 'delete'],
             'category'  => ['edit', 'delete'],
-            'article'   => ['edit', 'delete'],
-            'rss'   => ['edit', 'delete'],
-            'user'      => ['edit'],
+            'product'   => ['edit', 'delete'],
+            'user'      => ['edit', 'delete'],
             'menu'   => ['edit', 'delete'],
         ]
     ]

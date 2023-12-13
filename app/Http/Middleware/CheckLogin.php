@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Illuminate\Support\Facades\Auth;
 class CheckLogin
 {
     /**
@@ -15,9 +15,10 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('userInfo'))  return redirect()->route('home');
-
-        return $next($request);
+        if (Auth::check()) {
+            return redirect()->route('user');
+        }
+        return redirect()->route('auth/login');
     }
 }
 

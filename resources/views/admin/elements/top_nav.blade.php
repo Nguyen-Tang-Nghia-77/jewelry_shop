@@ -48,13 +48,13 @@
         <li class="nav-item dropdown user-menu">
 
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="{{ asset('admin-bk/dist/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="user-image">
+                <img src="{{ asset('admin/dist/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="user-image">
                 <span class="d-none d-md-inline">TrungNghia</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <!-- User image -->
                 <li class="user-header bg-info">
-                    <img src="{{ asset('admin-bk/dist/img/user2-160x160.jpg') }}"
+                    <img src="{{ asset('admin/dist/img/user2-160x160.jpg') }}"
                         class="img-circle elevation-2" alt="User Image">
 
                     <p>default <small>admin</small></p>
@@ -62,8 +62,12 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    <a href="index.php?module=backend&amp;controller=dashboard&amp;action=logout"
-                        class="btn btn-default btn-flat float-right">Sign out</a>
+                    <form action="{{ route('auth/logout') }}" method="post">
+                        @csrf
+                        <button class="btn btn-default btn-flat float-right" type="submit">Sign out</button>
+                    </form>
+                    {{-- <a href="{{ route('auth/logout') }}"
+                        class="btn btn-default btn-flat float-right">Sign out</a> --}}
                 </li>
             </ul>
         </li>

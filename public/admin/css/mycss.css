@@ -81,5 +81,8 @@ span.highlight{
     padding-left: 0;
     padding-right: 20px;
 }
+#output-nestable {
+    width: 80%;
+}
 
 

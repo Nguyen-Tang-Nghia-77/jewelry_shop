@@ -14,7 +14,7 @@
         </button>
     </div>
 </div>
-<div class="card-body">
+{{-- <div class="card-body">
     <form action="#" method="post" class="table-responsive" id="form-table">
         <!-- Control -->
 
@@ -79,4 +79,15 @@
     </form>
 </div>
 <div class="card-footer clearfix">
+</div> --}}
+<div class="card-body">
+    <div class="dd" id="nestable-category" data-url="{{ route('category/updateTree') }}">
+        <ol class="dd-list">
+            @foreach ($items as $item)
+                @include('admin.pages.category.list-item', ['item' => $item])
+            @endforeach
+        </ol>
+    </div>
+    <textarea name="" id="output-nestable" cols="10" rows="10"></textarea>
 </div>
+<div class="card-footer clearfix"></div>

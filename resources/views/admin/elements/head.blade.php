@@ -1,6 +1,8 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <title>Admin | Dashboard</title>
 
 <!-- Google Font: Source Sans Pro -->
@@ -10,24 +12,26 @@
 
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="{{ asset('admin-bk/plugins/fontawesome-free/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
 <!-- Tempusdominus Bootstrap 4 -->
 <link rel="stylesheet"
-    href="{{ asset('admin-bk/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    href="{{ asset('admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
 <!-- iCheck -->
-{{-- <link rel="stylesheet" href="{{ asset('admin-bk/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}"> --}}
 <!-- JQVMap -->
-{{-- <link rel="stylesheet" href="{{ asset('admin-bk/plugins/jqvmap/jqvmap.min.css') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('admin/plugins/jqvmap/jqvmap.min.css') }}"> --}}
 <!-- Theme style -->
-<link rel="stylesheet" href="{{ asset('admin-bk/dist/css/adminlte.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
+
 <!-- overlayScrollbars -->
-<link rel="stylesheet" href="{{ asset('admin-bk/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 <!-- Daterange picker -->
  {{-- <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">  --}}
 <!-- summernote -->
-{{-- <link rel="stylesheet" href="{{ asset('admin-bk/plugins/summernote/summernote-bs4.min.css') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css') }}"> --}}
 <!-- Custom Theme Style -->
 <link href="{{ asset('admin/css/cs1.css') }}" rel="stylesheet">
 <!-- Custom Theme Style -->
 <link href="{{ asset('admin/css/mycss.css') }}" rel="stylesheet">
 <link href="{{ asset('admin/css/custom.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('admin/css/jquery.nestable.min.css') }}">
